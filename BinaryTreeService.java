@@ -36,6 +36,14 @@ public class BinaryTreeService {
 			}
 		}
 	}
+	
+	public int getSize() {
+		return this.getSizeRecursive(root);
+	}
+	
+	private int getSizeRecursive(Node current) {
+		return current==null?0:1+this.getSizeRecursive(current.left)+this.getSizeRecursive(current.right);
+	}
 
 	@Override
 	public String toString() {
