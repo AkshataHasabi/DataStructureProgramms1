@@ -20,7 +20,8 @@ public class BinarySearchTreeMain {
 		BST2.insert(66);
 		BST2.insert(34);
 		System.out.println("The Binary Sarch Tree is:"+" "+BST2);
-		
+		Node root = null;
+		BST2.search(root, 22, null);
 		int size=BST2.getSize();
 		System.out.println("The Binary Sarch Tree is:"+" "+size);
 	}

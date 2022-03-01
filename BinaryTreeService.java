@@ -37,6 +37,38 @@ public class BinaryTreeService {
 		}
 	}
 	
+	public void search(Node root, int key, Node parent){
+        // if the key is not present in the key
+        if (root == null){
+            System.out.println("Key not found");
+            return;
+        }
+        // if the key is found
+        if (root.data == key)
+        {
+            if (parent == null) {
+                System.out.println("The node with key " + key + " is root node");
+            }
+            else if (key < parent.data){
+                System.out.println("The given key is the left node of the node " +
+                            "with key " + parent.data);
+            }else {
+                System.out.println("The given key is the right node of the node " +
+                            "with key " + parent.data);
+            }
+            return;
+        }
+        // if the given key is less than the root node, recur for the left subtree;
+        // otherwise, recur for the right subtree
+        if (key < root.data) {
+            search(root.left, key, root);
+        }
+        else {
+            search(root.right, key, root);
+        }
+    }
+ 
+	
 	public int getSize() {
 		return this.getSizeRecursive(root);
 	}
